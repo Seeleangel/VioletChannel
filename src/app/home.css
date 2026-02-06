@@ -1,0 +1,230 @@
+/* Home Page Styles */
+
+/* 导入全局样式 */
+@import url('../index.css');
+
+/* Banner Section */
+.banner {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 50%, #FFF0F5 100%);
+  position: relative;
+}
+
+.banner-welcome {
+  text-align: center;
+  padding: 2rem;
+}
+
+.banner-welcome h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.banner-welcome p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.welcome-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  border: 4px solid #FFB6C1;
+}
+
+/* Section */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(255, 182, 193, 0.3);
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-icon-emoji {
+  font-size: 2rem;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  color: #333;
+  margin: 0;
+}
+
+.card-description {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Grid Layouts */
+.portfolio-grid,
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.info-item {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-label {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+
+.info-value {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.explore-btn {
+  background: linear-gradient(135deg, #FFB6C1, #FF69B4);
+  color: white;
+}
+
+.explore-btn:hover {
+  box-shadow: 0 6px 20px rgba(255, 182, 193, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #FFB6C1;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-btn {
+  background: linear-gradient(135deg, #FFB6C1, #FF69B4);
+  color: white;
+  width: 100%;
+}
+
+.contact-btn:hover {
+  box-shadow: 0 6px 20px rgba(255, 182, 193, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner {
+    height: 100vh;
+  }
+
+  .banner-welcome h1 {
+    font-size: 1.8rem;
+  }
+
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-header {
+    font-size: 1.5rem;
+  }
+
+  .portfolio-grid,
+  .interest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-welcome h1 {
+    font-size: 1.5rem;
+  }
+
+  .section {
+    padding: 2.5rem 1rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+}

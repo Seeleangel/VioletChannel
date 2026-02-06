@@ -1,0 +1,327 @@
+/* 画廊遮罩层 */
+.gallery-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* 画廊容器 */
+.gallery-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 关闭按钮 */
+.gallery-close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease-out;
+  z-index: 10;
+}
+
+.gallery-close:hover {
+  background: rgba(255, 182, 193, 0.3);
+  border-color: #FFB6C1;
+}
+
+/* 图片展示区 */
+.gallery-image-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.gallery-image-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform, opacity;
+}
+
+.gallery-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* 导航按钮 */
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease-out;
+  z-index: 10;
+}
+
+.gallery-nav:hover {
+  background: rgba(255, 182, 193, 0.3);
+  border-color: #FFB6C1;
+}
+
+.gallery-prev {
+  left: 1rem;
+}
+
+.gallery-next {
+  right: 1rem;
+}
+
+/* 信息栏 */
+.gallery-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gallery-info h3 {
+  margin: 0;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.gallery-counter {
+  color: #FFB6C1;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* 缩略图导航 */
+.gallery-thumbnails {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: #FFB6C1 rgba(255, 255, 255, 0.1);
+}
+
+.gallery-thumbnails::-webkit-scrollbar {
+  height: 6px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-thumb {
+  background: #FFB6C1;
+  border-radius: 3px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-thumb:hover {
+  background: #FF69B4;
+}
+
+.thumbnail {
+  position: relative;
+  width: 80px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.15s ease-out;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.15s ease-out;
+}
+
+.thumbnail.active::after,
+.thumbnail:hover::after {
+  opacity: 0;
+}
+
+.thumbnail.active {
+  border-color: #FFB6C1;
+  box-shadow: 0 0 0 2px rgba(255, 182, 193, 0.3);
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .gallery-overlay {
+    padding: 0.5rem;
+  }
+
+  .gallery-container {
+    height: 100vh;
+    gap: 0.75rem;
+    padding-top: 50px;
+  }
+
+  .gallery-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 44px;
+    height: 44px;
+    /* 触摸友好的按钮大小 */
+  }
+
+  .gallery-image-wrapper {
+    /* 移动端全屏显示 */
+    flex: 1;
+    margin: 0 -0.5rem;
+  }
+
+  .gallery-nav {
+    width: 44px;
+    height: 44px;
+    /* 增大按钮便于触摸 */
+  }
+
+  .gallery-prev {
+    left: 0.5rem;
+  }
+
+  .gallery-next {
+    right: 0.5rem;
+  }
+
+  .gallery-info {
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .gallery-info h3 {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .gallery-counter {
+    font-size: 0.85rem;
+  }
+
+  .gallery-thumbnails {
+    gap: 0.5rem;
+    padding: 0.75rem 0.5rem;
+    /* 移动端水平滚动优化 */
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .thumbnail {
+    width: 70px;
+    height: 52px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    /* 触摸友好的缩略图大小 */
+  }
+  
+  .loader-spinner {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* 隐藏滚动条但保留滚动功能 */
+  .gallery-thumbnails::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* 小屏手机优化 */
+@media (max-width: 480px) {
+  .gallery-close {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gallery-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gallery-info {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .gallery-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .thumbnail {
+    width: 60px;
+    height: 45px;
+  }
+}
+
+/* 加载动画 - 已移除循环shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}

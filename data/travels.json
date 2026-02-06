@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "name": "无锡",
+    "lat": 31.4906,
+    "lng": 120.3119,
+    "country": "中国",
+    "date": "2025年11月",
+    "description": "太湖风光，灵山大佛，鼋头渚的樱花美景",
+    "images": [
+      "/img/compressed-DSC00292.jpg"
+    ],
+    "color": "#FF69B4"
+  },
+  {
+    "id": 2,
+    "name": "朱家尖",
+    "lat": 29.8833,
+    "lng": 122.3833,
+    "country": "中国",
+    "date": "2026年2月",
+    "description": "东海沙滩，碧海蓝天，海鲜美食",
+    "images": [
+      "/img/compressed-DSC00306.jpg"
+    ],
+    "color": "#FFB6C1"
+  },
+  {
+    "id": 3,
+    "name": "上海",
+    "lat": 31.2304,
+    "lng": 121.4737,
+    "country": "中国",
+    "date": "大部分时间在这儿",
+    "description": "华东师范大学普陀校区",
+    "images": [
+      "/img/compressed-DSC00324.jpg"
+    ],
+    "color": "#FF1493"
+  },
+  {
+    "id": 4,
+    "name": "重庆",
+    "lat": 29.4316,
+    "lng": 106.9123,
+    "country": "中国",
+    "date": "假期可能在这儿",
+    "description": "山城夜景，火锅美味，洪崖洞的璀璨灯光",
+    "images": [
+      "/img/compressed-DSC00234.jpg"
+    ],
+    "color": "#DB7093"
+  }
+]
