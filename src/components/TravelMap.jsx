@@ -67,17 +67,24 @@ function TravelMap({ isOpen, onClose }) {
     const [showAddForm, setShowAddForm] = useState(false);
     const [lightboxImage, setLightboxImage] = useState(null);
     const [uploading, setUploading] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const globeRef = useRef();
     const fileInputRef = useRef();
     const { isAdmin } = useAdmin();
 
+    // 确保只在客户端渲染
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
     // 从后端加载旅行数据
     useEffect(() => {
+        if (!isMounted) return;
         fetch('/api/travels')
             .then(res => res.json())
             .then(data => setTravelData(data))
             .catch(err => console.error('Failed to load travel data:', err));
-    }, []);
+    }, [isMounted]);
 
     // Point data for the globe
     const pointsData = useMemo(() => travelData.map(loc => ({
@@ -93,6 +100,8 @@ function TravelMap({ isOpen, onClose }) {
     }, [isOpen, globeReady]);
 
     useEffect(() => {
+        if (typeof window === 'undefined') return; // 服务器端跳过
+        
         const handleKeyDown = (e) => {
             if (e.key === 'Escape') {
                 if (isEditing) {
@@ -259,6 +268,9 @@ function TravelMap({ isOpen, onClose }) {
     };
 
     if (!isOpen) return null;
+    
+    // 服务器端或未挂载时不渲染
+    if (!isMounted) return null;
 
     return (
         <AnimatePresence>

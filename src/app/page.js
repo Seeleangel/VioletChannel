@@ -128,18 +128,37 @@ export default function Home() {
     };
 
     const handleCopyToClipboard = (text, platform) => {
-        navigator.clipboard.writeText(text).then(() => {
-            alert(`已复制${platform}号到剪贴板：${text}`);
-        }).catch(() => {
-            // 备用方案
+        // 检查 clipboard API 是否可用
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(`已复制${platform}号到剪贴板：${text}`);
+            }).catch(() => {
+                fallbackCopy(text, platform);
+            });
+        } else {
+            fallbackCopy(text, platform);
+        }
+    };
+
+    const fallbackCopy = (text, platform) => {
+        try {
             const textArea = document.createElement('textarea');
             textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
             document.body.appendChild(textArea);
+            textArea.focus();
             textArea.select();
-            document.execCommand('copy');
+            const successful = document.execCommand('copy');
             document.body.removeChild(textArea);
-            alert(`已复制${platform}号到剪贴板：${text}`);
-        });
+            if (successful) {
+                alert(`已复制${platform}号到剪贴板：${text}`);
+            } else {
+                alert(`复制失败，请手动复制：${text}`);
+            }
+        } catch (err) {
+            alert(`复制失败，${platform}号为：${text}`);
+        }
     };
 
     return (
