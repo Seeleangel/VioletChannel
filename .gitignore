@@ -36,3 +36,5 @@ public/music/*
 *.jks
 *.keystore
 *.mobileprovision
+public/img/gallery-*
+public/img/compressed-*
