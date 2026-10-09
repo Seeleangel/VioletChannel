@@ -1,0 +1,50 @@
+.settings-page {
+  animation: fadeIn 0.5s ease;
+}
+
+.settings-page .admin-card {
+  margin-bottom: 2rem;
+}
+
+.settings-page .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.settings-page .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.settings-page .form-group label {
+  display: block;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.settings-page .form-group input,
+.settings-page .form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.settings-page .form-group input:focus,
+.settings-page .form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.settings-page .form-group textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}

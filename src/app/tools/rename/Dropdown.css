@@ -1,0 +1,95 @@
+/* Export Dropdown Styles */
+.export-action-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.export-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.export-dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.2s;
+}
+
+.dropdown-trigger {
+    background: transparent;
+    border: 2px solid #FF69B4;
+    color: #FF69B4;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    height: 42px;
+    /* Match btn-primary height usually */
+}
+
+.dropdown-trigger:hover {
+    background: #FFF0F5;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    bottom: 110%;
+    /* Show above */
+    right: 0;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 0.5rem 0;
+    border: 1px solid #FFE4E1;
+}
+
+.dropdown-item {
+    padding: 0.8rem 1.2rem;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-item:hover {
+    background-color: #FFF0F5;
+    color: #FF69B4;
+}
+
+.dropdown-item span {
+    font-weight: 500;
+}
+
+.dropdown-item small {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 0.2rem;
+}
+
+.btn-outline-primary {
+    /* Helper class if not defined globally */
+    border: 1px solid #FF69B4;
+    color: #FF69B4;
+    background: transparent;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

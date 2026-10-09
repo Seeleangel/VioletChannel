@@ -1,0 +1,346 @@
+.markdown-image-page {
+  min-height: 100vh;
+  padding: 112px 24px 64px;
+  background:
+    radial-gradient(circle at top left, rgba(34, 197, 94, 0.14), transparent 28%),
+    radial-gradient(circle at right, rgba(249, 115, 22, 0.12), transparent 32%),
+    linear-gradient(180deg, #101418, #0b1020 48%, #09090f);
+}
+
+.markdown-image-shell {
+  width: min(1420px, 100%);
+  margin: 0 auto;
+}
+
+.tool-topbar,
+.tool-topbar-actions,
+.panel-block-title,
+.preview-header,
+.sample-actions,
+.chip-grid {
+  display: flex;
+  align-items: center;
+}
+
+.tool-topbar,
+.preview-header {
+  justify-content: space-between;
+}
+
+.tool-topbar-actions,
+.sample-actions,
+.chip-grid {
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tool-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(226, 232, 240, 0.82);
+  text-decoration: none;
+}
+
+.tool-intro {
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+
+.tool-intro h1 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  letter-spacing: -0.04em;
+}
+
+.tool-intro p {
+  margin: 14px 0 0;
+  max-width: 760px;
+  color: rgba(226, 232, 240, 0.72);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.markdown-image-layout {
+  display: grid;
+  grid-template-columns: 430px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.markdown-panel {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  background: rgba(15, 23, 42, 0.62);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(16px);
+}
+
+.editor-panel {
+  padding: 22px;
+}
+
+.tool-section + .tool-section {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tool-section-summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.tool-section-summary::-webkit-details-marker {
+  display: none;
+}
+
+.tool-section-body {
+  padding-top: 8px;
+}
+
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.template-card {
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(226, 232, 240, 0.84);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.template-card strong,
+.template-card span {
+  display: block;
+}
+
+.template-card strong {
+  font-size: 0.95rem;
+}
+
+.template-card span {
+  margin-top: 6px;
+  color: rgba(226, 232, 240, 0.58);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.template-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(74, 222, 128, 0.28);
+}
+
+.template-card.active {
+  background: rgba(74, 222, 128, 0.14);
+  border-color: rgba(74, 222, 128, 0.38);
+}
+
+.panel-block-title {
+  gap: 10px;
+  color: #f8fafc;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.tool-field {
+  display: block;
+}
+
+.tool-field + .tool-field {
+  margin-top: 14px;
+}
+
+.tool-field span,
+.slider-field span {
+  display: block;
+  margin-bottom: 8px;
+  color: rgba(226, 232, 240, 0.72);
+  font-size: 0.92rem;
+}
+
+.tool-field input,
+.tool-field textarea,
+.markdown-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.86);
+  color: #f8fafc;
+  font: inherit;
+  resize: vertical;
+}
+
+.tool-field input:focus,
+.tool-field textarea:focus,
+.markdown-input:focus {
+  outline: none;
+  border-color: rgba(74, 222, 128, 0.7);
+  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.14);
+}
+
+.markdown-input {
+  min-height: 420px;
+  line-height: 1.7;
+}
+
+.tool-primary-button,
+.tool-ghost-button,
+.tool-chip {
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-primary-button {
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #4ade80, #f59e0b);
+  color: #1c1917;
+  font-weight: 700;
+}
+
+.tool-ghost-button {
+  padding: 11px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+}
+
+.tool-chip {
+  padding: 10px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(226, 232, 240, 0.82);
+}
+
+.tool-primary-button:hover,
+.tool-ghost-button:hover,
+.tool-chip:hover {
+  transform: translateY(-1px);
+}
+
+.tool-chip.active {
+  background: rgba(74, 222, 128, 0.16);
+  color: #dcfce7;
+  box-shadow: inset 0 0 0 1px rgba(74, 222, 128, 0.3);
+}
+
+.section-stack {
+  margin-top: 12px;
+}
+
+.slider-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+}
+
+.slider-field input[type='range'] {
+  width: 100%;
+  accent-color: #4ade80;
+}
+
+.preview-panel {
+  position: sticky;
+  top: 110px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 150px);
+  padding: 20px;
+}
+
+.preview-header h2 {
+  margin: 0;
+  color: #f8fafc;
+}
+
+.preview-header p {
+  margin: 8px 0 0;
+  color: rgba(226, 232, 240, 0.64);
+}
+
+.canvas-stage {
+  margin-top: 20px;
+  flex: 1;
+  min-height: 0;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(15, 23, 42, 0.12)),
+    rgba(15, 23, 42, 0.56);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  overflow: hidden;
+}
+
+.markdown-canvas {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 28px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 1100px) {
+  .markdown-image-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-panel {
+    position: static;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .markdown-image-page {
+    padding: 96px 16px 48px;
+  }
+
+  .tool-topbar,
+  .tool-topbar-actions,
+  .preview-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tool-topbar-actions {
+    margin-top: 14px;
+  }
+
+  .tool-topbar-actions .tool-primary-button,
+  .tool-topbar-actions .tool-ghost-button {
+    justify-content: center;
+  }
+
+  .template-grid,
+  .slider-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .canvas-stage {
+    min-height: 420px;
+    padding: 14px;
+  }
+
+  .markdown-input {
+    min-height: 320px;
+  }
+}

@@ -1,0 +1,459 @@
+/* Blog Global Styles */
+.blog-container {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.blog-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) 3fr;
+    gap: 2rem;
+}
+
+/* Blog List Header */
+.blog-header-card {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 240, 245, 0.9) 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(255, 182, 193, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+.blog-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.blog-title-bar {
+    width: 4px;
+    height: 28px;
+    background: linear-gradient(180deg, #FF69B4, #FFB6C1);
+    border-radius: 2px;
+}
+
+.blog-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.blog-count-badge {
+    background: linear-gradient(135deg, #FF69B4, #FFB6C1);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.blog-search-wrapper {
+    position: relative;
+}
+
+.blog-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FF69B4;
+}
+
+.blog-search-input {
+    padding: 0.7rem 1rem 0.7rem 2.6rem;
+    border: 2px solid rgba(255, 182, 193, 0.5);
+    border-radius: 25px;
+    outline: none;
+    font-size: 0.9rem;
+    width: 220px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 182, 193, 0.1);
+}
+
+.blog-search-input:focus {
+    border-color: #FF69B4;
+    box-shadow: 0 4px 16px rgba(255, 105, 180, 0.2);
+}
+
+/* Blog Grid */
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-post-card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(255, 182, 193, 0.4);
+}
+
+.post-card-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.post-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.blog-post-card:hover .post-card-image img {
+    transform: scale(1.05);
+}
+
+.post-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.post-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.post-category-tag {
+    background: #FFF0F5;
+    color: #FF69B4;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.post-date {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.post-title {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.post-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.read-more-link {
+    display: flex;
+    align-items: center;
+    color: #FF69B4;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-top: auto;
+}
+
+/* Blog Detail Page */
+.blog-post-container {
+    padding: 0;
+    overflow: hidden;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.post-hero {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.post-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 3rem 2rem 2rem;
+    color: white;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.back-link:hover {
+    opacity: 1;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+.post-body {
+    padding: 3rem;
+}
+
+.post-info-bar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.5rem;
+    color: #666;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-buttons {
+    margin-left: auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    border: 1px solid;
+}
+
+.edit-btn {
+    background: #FFF0F5;
+    border-color: #FFB6C1;
+    color: #FF69B4;
+}
+
+.delete-btn {
+    background: #FFF0F0;
+    border-color: #FFB6B6;
+    color: #FF6B6B;
+}
+
+/* Reading Toolbar */
+.reading-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #666;
+    flex-wrap: wrap;
+}
+
+.toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toolbar-btn {
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background: white;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toolbar-btn.active {
+    background: #FFB6C1;
+    color: white;
+    border-color: #FFB6C1;
+}
+
+.divider {
+    width: 1px;
+    height: 20px;
+    background: #ddd;
+    margin: 0 0.5rem;
+}
+
+/* Article Content */
+.article-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.article-content h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #FFB6C1;
+    padding-left: 1rem;
+}
+
+.article-content h3 {
+    font-size: 1.4rem;
+    color: #444;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.article-content blockquote {
+    border-left: 4px solid #FF69B4;
+    padding: 1rem;
+    background: #FFF0F5;
+    margin: 1.5rem 0;
+    color: #555;
+    font-style: italic;
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .blog-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* Maybe hide sidebar or move to bottom?
+       For now, let's keep it on top or make it collapsible if needed.
+       Actually, standard mobile blog puts sidebar at bottom or hidden.
+       Let's put Sidebar first but maybe collapsed?
+       Or just let it be on top.
+    */
+}
+
+@media (max-width: 768px) {
+    .blog-container {
+        padding-top: 80px;
+    }
+
+    .blog-header-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .blog-search-wrapper {
+        width: 100%;
+    }
+
+    .blog-search-input {
+        width: 100%;
+    }
+
+    .post-hero {
+        height: 250px;
+    }
+
+    .post-hero-overlay {
+        padding: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .post-body {
+        padding: 1.5rem;
+    }
+
+    .post-info-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .action-buttons {
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .reading-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .toolbar-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .article-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .article-content p {
+        font-size: 1rem;
+    }
+}

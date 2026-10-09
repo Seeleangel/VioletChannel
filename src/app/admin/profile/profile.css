@@ -1,0 +1,339 @@
+.profile-management {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Cards */
+.profile-management .admin-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.profile-management .admin-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.profile-management .admin-card-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+.profile-management .admin-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.profile-management .admin-card-title svg {
+  color: #667eea;
+}
+
+/* Form Groups */
+.profile-management .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.profile-management .form-group label {
+  display: block;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.profile-management .form-group input,
+.profile-management .form-group textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.profile-management .form-group input:focus,
+.profile-management .form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  background: #fafbff;
+}
+
+.profile-management .form-group textarea {
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.6;
+  min-height: 80px;
+}
+
+/* About Me Card */
+.paragraph-item {
+  position: relative;
+  margin-bottom: 1.25rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.paragraph-item:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.paragraph-item textarea {
+  flex: 1;
+  resize: vertical;
+  background: white;
+  border: 1px solid #e5e7eb;
+}
+
+.paragraph-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.label-with-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f0f4ff 0%, #faf5ff 100%);
+  border-radius: 10px;
+}
+
+.label-with-action label {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4c1d95;
+}
+
+.btn-sm {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-icon-danger {
+  background: #fee2e2;
+  color: #ef4444;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.btn-icon-danger:hover {
+  background: #ef4444;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Basic Information */
+.basic-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.basic-info-item {
+  background: linear-gradient(135deg, #fafbff 0%, #f9fafb 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.basic-info-item:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.1);
+  transform: translateX(4px);
+}
+
+.info-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.form-group.small {
+  width: 100px;
+}
+
+.form-group.flex-grow {
+  flex: 1;
+}
+
+.form-group.small label,
+.form-group.flex-grow label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group.small input {
+  padding: 0.625rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+/* Image Preview */
+.image-preview-wrapper {
+  margin-top: 1rem;
+}
+
+.image-preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.image-preview:hover {
+  transform: scale(1.05);
+  border-color: #667eea;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Empty State */
+.empty-paragraphs {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  border-radius: 12px;
+  border: 2px dashed #d1d5db;
+}
+
+.empty-paragraphs p {
+  color: #6b7280;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+/* Buttons Enhancement */
+.profile-management .btn-secondary {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  border: 2px solid #d1d5db;
+  color: #374151;
+}
+
+.profile-management .btn-secondary:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Page Header Enhancement */
+.profile-management .page-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+.profile-management .page-header h1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-management .admin-card {
+    padding: 1.5rem;
+  }
+
+  .info-row {
+    flex-wrap: wrap;
+  }
+
+  .form-group.small {
+    width: calc(50% - 0.5rem);
+  }
+
+  .form-group.flex-grow {
+    width: 100%;
+  }
+
+  .btn-icon-danger {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .paragraph-item {
+    flex-direction: column;
+  }
+
+  .paragraph-number {
+    align-self: flex-start;
+  }
+
+  .label-with-action {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .label-with-action .btn-sm {
+    width: 100%;
+  }
+}

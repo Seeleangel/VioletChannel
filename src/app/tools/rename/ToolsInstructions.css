@@ -1,0 +1,82 @@
+/* Instructions */
+.tool-instructions-wrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.tool-instructions {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 800px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.tool-instructions[open] {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 1rem 1.5rem;
+}
+
+.tool-instructions summary {
+    font-weight: 600;
+    color: #FF69B4;
+    list-style: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tool-instructions summary::-webkit-details-marker {
+    display: none;
+}
+
+.instruction-content {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #FFB6C1;
+    cursor: default;
+}
+
+.instruction-item {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+}
+
+.step-badge {
+    background: #FF69B4;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.instruction-item h4 {
+    color: #333;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.instruction-item p {
+    color: #666;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 0;
+}

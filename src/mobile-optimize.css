@@ -1,0 +1,171 @@
+/* 移动端全局优化 */
+
+/* 容器优化 */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    max-width: 100% !important;
+  }
+
+  /* 玻璃面板优化 */
+  .glass-panel {
+    padding: 1.25rem !important;
+    border-radius: 16px !important;
+  }
+
+  /* 按钮优化 */
+  .btn {
+    min-height: 44px !important;
+    padding: 0.75rem 1.25rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  /* 标题优化 */
+  h1 {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  /* 输入框优化 */
+  input[type="range"] {
+    width: 100% !important;
+    min-height: 44px !important;
+  }
+
+  input[type="number"],
+  input[type="text"],
+  select {
+    min-height: 44px !important;
+    font-size: 16px !important; /* 防止iOS自动缩放 */
+  }
+
+  /* 图片列表优化 */
+  .image-item {
+    flex-direction: column !important;
+    padding: 1rem !important;
+  }
+
+  .image-item img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* 工具栏优化 */
+  .toolbar {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+
+  .toolbar button {
+    width: 100% !important;
+  }
+}
+
+/* 小屏手机优化 */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .glass-panel {
+    padding: 1rem !important;
+    border-radius: 12px !important;
+  }
+
+  h1 {
+    font-size: 1.5rem !important;
+  }
+
+  h2 {
+    font-size: 1.3rem !important;
+  }
+
+  .btn {
+    padding: 0.65rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* 横屏优化 */
+@media (max-height: 500px) and (orientation: landscape) {
+  .banner {
+    height: auto !important;
+    min-height: 100vh !important;
+    padding: 3rem 1rem !important;
+  }
+
+  .gallery-container {
+    height: 95vh !important;
+  }
+
+  .gallery-thumbnails {
+    padding: 0.5rem !important;
+  }
+}
+
+/* 触摸优化 */
+@media (hover: none) and (pointer: coarse) {
+  /* 增大可点击区域 */
+  a, button, .clickable {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  /* 移除悬停效果 */
+  .card:hover,
+  .thumbnail:hover,
+  .tab:hover {
+    transform: none !important;
+  }
+
+  /* 优化点击反馈 */
+  .card:active,
+  .thumbnail:active,
+  .btn:active {
+    transform: scale(0.98) !important;
+    opacity: 0.9 !important;
+  }
+}
+
+/* 高分辨率屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* 安全区域适配（iPhone刘海屏等） */
+@supports (padding: max(0px)) {
+  .navigation {
+    padding-left: max(1rem, env(safe-area-inset-left)) !important;
+    padding-right: max(1rem, env(safe-area-inset-right)) !important;
+  }
+
+  .gallery-overlay {
+    padding-left: max(0.5rem, env(safe-area-inset-left)) !important;
+    padding-right: max(0.5rem, env(safe-area-inset-right)) !important;
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom)) !important;
+  }
+
+  .home-container {
+    padding-left: max(0, env(safe-area-inset-left)) !important;
+    padding-right: max(0, env(safe-area-inset-right)) !important;
+  }
+}
